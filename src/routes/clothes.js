@@ -2,8 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const ClothesInterface = require('../models/clothes.js');
-const clothes = new ClothesInterface();
+const ClothesInterface = require('../models/clothes-interface.js');
+const ClothesModel = require('../models/clothes-model.js');
+const clothes = new ClothesInterface(ClothesModel);
 const validator = require('../middleware/validator.js');
 
 router.get('/clothes', getClothes);
