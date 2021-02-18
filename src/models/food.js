@@ -27,7 +27,8 @@ class FoodInterface{
   }
  
   update(id, obj){
-    for(let i=0; i< this.foodArray; i++){
+    console.log(id, obj);
+    for(let i=0; i< this.foodArray.length; i++){
       if(this.foodArray[i].id === id){
         this.foodArray[i].data = obj;
         return this.foodArray[i];
@@ -35,9 +36,16 @@ class FoodInterface{
     }
 
   }
-  // delete(){
+  delete(id){
+    // eslint-disable-next-line no-empty
+    for(let i=0; i< this.foodArray.length; i++){
+      // eslint-disable-next-line no-empty
+      if (this.foodArray[i].id === id){
+        delete this.foodArray[i];    
+      }
+    }
 
-  // }
+  }
 }
 
 module.exports = FoodInterface;

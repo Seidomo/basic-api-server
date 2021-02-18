@@ -5,25 +5,45 @@ class ClothesInterface{
     this.id = 0;
     this.clothesArray = [];
   }
-
-  read(){
-
-
+  read(id){
+    if(id){
+      return this.clothesArray.find(record => record.id === id);
+    }else{
+      return this.clothesArray;
+    }
+    
   }
-
-  create(){
-
-
+      
+  create(obj){
+    let record = {
+      id: this.id +=1,
+      data: obj,
+    };
+    
+    this.clothesArray.push(record);
+    return record;
+    
   }
-
-  update(){
-
-
+     
+  update(id, obj){
+    console.log(id, obj);
+    for(let i=0; i< this.clothesArray.length; i++){
+      if(this.clothesArray[i].id === id){
+        this.clothesArray[i].data = obj;
+        return this.clothesArray[i];
+      }
+    }
+    
   }
-
-  delete(){
-
-
+  delete(id){
+   
+    for(let i=0; i< this.clothesArray.length; i++){
+     
+      if (this.clothesArray[i].id === id){
+        delete this.clothesArray[i];    
+      }
+    }
+    
   }
 }
 
