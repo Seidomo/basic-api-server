@@ -24,5 +24,10 @@ am using jest and superteste also from node.js for testing purposes
 four routes passing the test and also deployed to heroku
 
 
+# deployment
+
+- [heroku](https://basic-ap.herokuapp.com/)
+
+
 
 - [UML image](./assets/lab022.png)
